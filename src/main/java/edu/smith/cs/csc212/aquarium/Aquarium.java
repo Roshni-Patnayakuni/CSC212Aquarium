@@ -44,12 +44,9 @@ public class Aquarium extends GFX {
 	Snail algorithm = new Snail(177, Snail.HEIGHT + 1, "top");
 	
 
-	int fish1X = getWidth() + 100;
-	int fish2X = getWidth() + 300;
-	int fish3X = getWidth() + 200;
 	
-	Fish nemo = new Fish(Color.red, 250, 250);
-	Fish dory = new Fish(Color.cyan, 100, 100);
+	Fish nemo = new Fish(Color.red, 250, 250, true, true);
+	Fish dory = new Fish(Color.cyan, 100, 100, false, false );
 
 	@Override
 	public void draw(Graphics2D g) {
@@ -60,21 +57,8 @@ public class Aquarium extends GFX {
 		nemo.draw(g);
 		dory.draw(g);
 
-		// Draw the fish!
-		DrawFish.facingLeft(g, Color.yellow, fish1X, 200);
-		// Draw the confused fish!
-		DrawFish.facingRight(g, Color.green, fish2X, 300);
-
-		// What if we wanted this little fish to swim, too?
-		DrawFish.smallFacingLeft(g, Color.red, fish3X, 100);
-
 		// Draw our snail!
 		algorithm.draw(g);
-
-		// Move the fish!
-		fish1X -= 1;
-		fish2X -= 2;
-		fish3X -= 3;
 		
 	}	
 
